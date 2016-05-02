@@ -1,0 +1,25 @@
+<%namespace name='static' file='static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+%>
+<%page args="course" expression_filter="h"/>
+<div class="col-md-4 col-sm-6 col-xs-6">
+  <a href="${reverse('about_course', args=[course.id.to_deprecated_string()])}" class="ln-tr">
+    <div class="course">
+        <!-- <div class="featured-badge"><span>special</span></div> -->
+        <div class="course-image">
+            <div class="details-overlay">
+                <span class="more-details">LEARN MORE</span>
+            </div><!-- End Course Overlay -->
+            <!--<img src="${static.url('themes/ava/images/content/course-slider-img-1-270x178.jpg')}" class="img-responsive" alt="">-->
+            <img src="${course.course_image_url | h}" alt="${course.display_name_with_default} ${course.display_number_with_default}" class="img-responsive">
+        </div><!-- End Course Image -->
+        <div class="course-info">
+            <div class="course-partner">${course.display_org_with_default}</div>
+            <div class="course-number">${course.display_number_with_default}</div>
+            <h3 class="course-title">${course.display_name_with_default}</h3>
+        </div>
+    </div><!-- End Course -->
+    </a>
+</div><!-- End col-md-3 col-xs-6 -->

@@ -1,0 +1,22 @@
+<%inherit file="../main-ava.html" />
+<%namespace name='static' file='../static_content.html'/>
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+%>
+
+<section class="full-section">
+    <div class="container clear-bottommargin clearfix">
+        <div class="col-md-12">
+            <div class="activation-message invalid top-margin">
+                ${_("Activation Invalid")}
+            </div><!-- End Add Courses -->
+        </div>
+        <p class="activation-p">${_('Something went wrong. Check to make sure the URL you went to was '
+               'correct -- e-mail programs will sometimes split it into two '
+               'lines. If you still have issues, e-mail us to let us know what happened '
+               'at {email}.').format(email='<a href="mailto:{email}">{email}</a>'.format(email=settings.BUGS_EMAIL))}
+        </p>
+        <p class="activation-p">${_('Or you can go back to the {link_start}home page{link_end}.').format(link_start='<a href="/">', link_end='</a>')}</p>
+    </div>
+</section>

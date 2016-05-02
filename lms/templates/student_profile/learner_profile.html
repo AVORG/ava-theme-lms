@@ -1,0 +1,37 @@
+<%page expression_filter="h"/>
+<%inherit file="/main-ava.html" />
+<%namespace name='static' file='/static_content.html'/>
+<%!
+import json
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
+from openedx.core.djangolib.js_utils import dump_js_escaped_json
+%>
+
+<%block name="pagetitle">${_("Learner Profile")}</%block>
+<%block name="page_header">
+    <%include file="../page_header.html" args="page_properties={
+      'title': 'My Profile',
+      'description': 'These settings include basic information about your account.',
+      'current_page': ''
+    }" />
+</%block>
+<%block name="headextra">
+    <link rel="stylesheet" href="${static.url('css/account.css')}">
+</%block>
+<section class="full-section">
+    <div class="container">
+        <div class="message-banner" aria-live="polite"></div>
+        <div class="wrapper-profile">
+            <div class="ui-loading-indicator">
+                <p><span class="spin"><i class="icon fa fa-refresh" aria-hidden="true"></i></span> <span class="copy">${_("Loading")}</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<%block name="js_extra">
+<%static:require_module module_name="js/student_profile/views/learner_profile_factory" class_name="LearnerProfileFactory">
+    var options = ${data | n, dump_js_escaped_json};
+    LearnerProfileFactory(options);
+</%static:require_module>
+</%block>

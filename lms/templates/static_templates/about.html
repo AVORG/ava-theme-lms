@@ -1,0 +1,182 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main-ava.html" />
+<%namespace name='static' file='../static_content.html'/>
+
+<%block name="pagetitle">${_('About')}</%block>
+<%block name="page_header">
+    <%include file="../page_header.html" args="page_properties={
+      'title': 'About AudioVerse Advance',
+      'description': 'Inspire. Instruct. Interact',
+      'current_page': 'About AudioVerse Advance'
+    }" />
+</%block>
+<%block name="headextra">
+  <style>
+        .remodal-bg.video-box.remodal-is-opening,
+        .remodal-bg.video-box.remodal-is-opened {
+            filter: none;
+        }
+        .remodal.video-box {
+            width: 560px;
+            height: 315px;
+            padding: 0;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            border-radius: 3px;
+            box-shadow: 0 0px 5px 0 rgba(0,0,0,0.4);
+            background: #474747;
+            color: #3c3c3c;
+        }
+
+    </style>
+    <script>
+    $(function() {
+        $('[data-remodal-id=intro-video-modal]').remodal({
+            modifier: 'video-box'
+        });
+    });
+    </script>
+</%block>
+<section class="full-section">
+    <div class="container">
+    	<div class="col-md-5 topmargin bottommargin">
+            <a href="#intro-video-modal" class="media">
+              <div class="hero">
+	            <img src="${static.url('images/worldmap.png')}" class="img-responsive" style="margin: auto;">
+                <div class="play-intro"><i class="fa fa-play play-button"></i></div>
+            </div>
+          </a>
+    	</div>
+    	<div class="col-md-7">
+    		<div class="heading-block">
+    			<h2 class="section-title">Why AudioVerse Advance?</h2>
+    			<span>With 7.3 Billion people in the world today, how will all these people hear the Everlasting Gospel?</span>
+    		</div>
+    		<p>The only way is for ordinary believers like you and me to get active in sharing our faith with those around us.  You don’t know how to share your faith, you say?</p>
+    		<p>That’s why we are introducing, AudioVerse Advance.  A brand new online Bible training school brought to you by the team behind <a href="https://www.audioverse.org" target="_blank">AudioVerse.org</a>.</p>
+    	</div>
+    </div>
+</section><!-- End Courses Section -->
+<section class="full-section" style="background-color: #F9F9F9;">
+	<div class="container">
+		<div class="heading-block center">
+			<h2 class="section-title topmargin">AudioVerse Advance Courses will</h2>
+				<span style="margin: 0px 100px">INSPIRE you as you are INSTRUCTED in the Truth to confidently share your faith as you INTERACT with your friends.</span>
+		</div>
+		<div class="col-md-4">
+			<div class="feature-box media-box">
+				<div class="fbox-media">
+					<img src="${static.url('images/inspire.png')}" alt="Inspired by the truth" class="img-responsive" style="margin: auto;">
+				</div>
+				<div class="fbox-desc">
+					<h3>INSPIRE.<span class="subtitle">Inspired by the Truth.</span></h3>
+					<p>Take courses that teach solid, relevant Bible truth from qualified and godly teachers.  Be prepared to have your faith affirmed and to be inspired for active service!</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="feature-box media-box">
+				<div class="fbox-media">
+					<img src="${static.url('images/instruct.png')}" alt="Instructed in the truth" class="img-responsive" style="margin: auto;">
+				</div>
+				<div class="fbox-desc">
+					<h3>INSTRUCT.<span class="subtitle">Instructed in the Truth.</span></h3>
+					<p>Courses are made conveniently available to anyone to take anytime, anywhere, and at an affordable price.  The state-of-the-art online learning platform allows you to choose what you want to learn, learn it at your own pace, and to learn whether at home or on the road.</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="feature-box media-box">
+				<div class="fbox-media">
+					<img src="${static.url('images/interact.png')}" alt="Interact to share the truth." class="img-responsive" style="margin: auto;">
+				</div>
+				<div class="fbox-desc">
+					<h3>INTERACT.<span class="subtitle">Interact to share the Truth.</span></h3>
+					<p>You can connect with fellow students from around the world online, then you can use what you’ve learned to witness to your friends offline.  Get trained to start sharing your faith today!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="full-section">
+	<div class="container">
+		<div class="heading-block center">
+			<h2 class="section-title topmargin">Who is AudioVerse Advance for?</h2>
+			<span>Anyone who wants to get training NOW!</span>
+		</div>
+		<div class="row">
+			<div class="col-md-4 bottommargin">
+				<img data-animate="fadeInLeftBig" src="${static.url('/static/images/monitor.png')}" alt="iPhone" class="img-responsive">
+			</div>
+			<div class="col-md-4 col-sm-6 topmargin bottommargin">
+				<div class="col_full">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Professionals</h3>
+						<p>Professionals who can’t take time off for training programs.</p>
+					</div>
+				</div>
+				<div class="col_full">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Churches</h3>
+						<p>Churches that want to provide inspiration and training for their members.</p>
+					</div>
+				</div>
+				<div class="col_full nobottommargin">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Parents</h3>
+						<p>Parents who have limited time to get away.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-6 topmargin bottommargin">
+				<div class="col_full">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Teachers</h3>
+						<p>Teachers who want to supplement their students' education.</p>
+					</div>
+				</div>
+				<div class="col_full">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Students</h3>
+						<p>Students and home schoolers who want to learn at their own pace.</p>
+					</div>
+				</div>
+				<div class="col_full nobottommargin">
+					<div class="feature-box fbox-plain fbox-small fbox-dark">
+						<h3>Individuals</h3>
+						<p>Individuals with no options for training near them.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- Donation -->
+<section class="full-section" style="background-color: #F9F9F9;">
+    <div class="container">
+		<div class="col-md-7">
+			<div class="heading-block">
+				<h2 class="section-title topmargin">YOU CAN HELP!</h2>
+				<span>We are hard at work building the platform and creating the courses for AudioVerse Advance, and your financial support is needed! </span>
+			</div>
+			<p>We praise God that some generous supporters have pledged to <strong>match every dollar you give to this project</strong> —dollar for dollar!
+				Just think, your gifts will have <strong>DOUBLE</strong> the impact for the Kingdom!  That’s right:  Your gift of $50 will become $100, your gift of $500 will be come $1,000!</p>
+			<p>Thank you for your partnership to realize this vision!</p>
+
+		</div>
+		<div class="col-md-5">
+			<div class="feature-box fbox-center fbox-dark fbox-plain" style="padding-top: 70px;">
+				<div class="fbox-icon">
+					<a href="https://www.audioverse.org/avagive" target="_blank"><i class="fa fa-envelope-o"></i></a>
+				</div>
+                <a href="https://www.audioverse.org/avagive" target="_blank" class="button button-3d button-xlarge button-rounded">Donate Now</a>
+			</div>
+		</div>
+    </div>
+</section>
+<div data-remodal-id="intro-video-modal" role="dialog">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Gzv5WBSdYJM" frameborder="0" allowfullscreen></iframe>
+</div>

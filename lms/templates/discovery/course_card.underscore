@@ -1,0 +1,17 @@
+<div class="col-md-4 col-sm-6 col-xs-6">
+  <a href="/courses/<%- course %>/about" class="ln-tr">
+    <div class="course">
+        <div class="course-image">
+            <div class="details-overlay">
+                <span class="more-details">LEARN MORE</span>
+            </div><!-- End Course Overlay -->
+            <img src="<%- image_url %>" alt="<%= content.display_name %> <%= content.number %>" class="img-responsive">
+        </div><!-- End Course Image -->
+        <div class="course-info">
+            <div class="course-partner"><%= org %></div>
+            <div class="course-number"><%= content.number %></div>
+            <h3 class="course-title"><%= content.display_name %></h3>
+        </div>
+    </div><!-- End Course -->
+    </a>
+</div><!-- End col-md-3 col-xs-6 -->

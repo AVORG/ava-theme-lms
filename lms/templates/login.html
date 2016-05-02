@@ -1,0 +1,205 @@
+<%inherit file="main-ava.html" />
+<%namespace name='static' file='static_content.html'/>
+
+<%!
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
+import third_party_auth
+from third_party_auth import provider, pipeline
+%>
+<%block name="page_header">
+    <%include file="page_header.html" args="page_properties={
+      'title': 'Sign In',
+      'description': 'Please log in to access your account and courses',
+      'current_page': 'Login'
+    }" />
+</%block>
+<%block name="pagetitle">${_("Log into your {platform_name} Account").format(platform_name=platform_name)}</%block>
+<%block name="js_extra">
+  <script type="text/javascript">
+    $(function() {
+
+      // adding js class for styling with accessibility in mind
+      $('body').addClass('js');
+
+      // show forgot password modal UI if URL contains matching DOM ID
+      if ($.deparam.fragment()['forgot-password-modal'] !== undefined) {
+        $('.pwd-reset').click();
+      }
+
+      // new window/tab opening
+      $('a[rel="external"], a[class="new-vp"]')
+      .click( function() {
+        window.open( $(this).attr('href') );
+        return false;
+      });
+
+      // form field label styling on focus
+      $("form :input").focus(function() {
+        $("label[for='" + this.id + "']").parent().addClass("is-focused");
+      }).blur(function() {
+        $("label").parent().removeClass("is-focused");
+      });
+
+      $("#email").focus();
+    });
+
+    (function() {
+      toggleSubmitButton(true);
+
+      $('#login-form').on('submit', function() {
+        toggleSubmitButton(false);
+      });
+
+      $('#login-form').on('ajax:error', function(event, request, status_string) {
+        toggleSubmitButton(true);
+
+        if (request.status === 403) {
+          $('.message.submission-error').removeClass('is-shown');
+          $('.third-party-signin.message').addClass('is-shown').focus();
+          $('.third-party-signin.message .instructions').html(request.responseText);
+        } else {
+          $('.third-party-signin.message').removeClass('is-shown');
+          $('.message.submission-error').addClass('is-shown').focus();
+          $('.message.submission-error').html(gettext("Your request could not be completed.  Please try again."));
+        }
+      });
+
+      $('#login-form').on('ajax:success', function(event, json, xhr) {
+        if(json.success) {
+          var nextUrl = "${login_redirect_url}";
+          if (json.redirect_url) {
+            nextUrl = json.redirect_url; // Most likely third party auth completion. This trumps 'nextUrl' above.
+          }
+          if (!isExternal(nextUrl)) {
+            location.href=nextUrl;
+          } else {
+            location.href="${reverse('dashboard')}";
+          }
+        } else if(json.hasOwnProperty('redirect')) {
+          // Shibboleth authentication redirect requested by the server:
+          var u=decodeURI(window.location.search);
+          if (!isExternal(json.redirect)) { // a paranoid check.  Our server is the one providing json.redirect
+              location.href=json.redirect+u;
+          } // else we just remain on this page, which is fine since this particular path implies a login failure
+            // that has been generated via packet tampering (json.redirect has been messed with).
+        } else {
+
+          toggleSubmitButton(true);
+          $('.message.submission-error').addClass('is-shown').focus();
+          $('.message.submission-error .message-copy').html(json.value);
+
+        }
+      });
+    })(this);
+
+    function toggleSubmitButton(enable) {
+      var $submitButton = $('form .form-actions #submit');
+      if(enable) {
+        $submitButton.
+          removeClass('is-disabled').
+          attr('aria-disabled', false).
+          removeProp('disabled').
+          html("${_('Log into My {platform_name} Account').format(platform_name=platform_name)} <span class='orn-plus'>+</span> ${_('Access My Courses')}");
+      }
+      else {
+        $submitButton.
+          addClass('is-disabled').
+          prop('disabled', true).
+          text("${_(u'Processing your account information')}");
+      }
+    }
+
+    function thirdPartySignin(event, url) {
+      event.preventDefault();
+      window.location.href = url;
+    }
+
+    (function post_form_if_pipeline_running(pipeline_running) {
+       // If the pipeline is running, the user has already authenticated via a
+       // third-party provider. We want to invoke /login_ajax to loop in the
+       // code that does logging and sets cookies on the request. It is most
+       // consistent to do that by using the same mechanism that is used when
+       // the use does first-party sign-in: POSTing the sign-in form.
+       if (pipeline_running) {
+         $('#login-form').submit();
+       }
+    })(${pipeline_running})
+  </script>
+</%block>
+
+<%include file="forgot_password_modal.html" />
+
+  <section class="login-page">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-8 col-md-offset-2">
+                  <!-- status messages -->
+                  <div role="alert" class="status message">
+                     <div class="alert-box">
+                         <h3 class="message-title">${_("We're Sorry, {platform_name} accounts are unavailable currently").format(platform_name=platform_name)}</h3>
+                     </div>
+                  </div>
+
+                  <div role="alert" class="status message submission-error" tabindex="-1">
+                      <div class="alert-box">
+                          <h3 class="message-title">${_("We couldn't log you in.")} </h3>
+                          <h3 class="message-copy">${_("Your email or password is incorrect")}</h3>
+                      </div>
+                  </div>
+
+                  <div role="alert" class="third-party-signin message" tabindex="-1">
+                    <p class="instructions"> </p>
+                  </div>
+
+                  % if third_party_auth_error:
+                    <div role="alert" class="status message third-party-auth-error is-shown" tabindex="-1">
+                        <div class="alert-box">
+                            <h3 class="message-title">${_("An error occurred when signing you in to {platform_name}.").format(platform_name=platform_name)} </h3>
+                            <h3 class="message-copy">${third_party_auth_error}</h3>
+                        </div>
+                    </div>
+                  % endif
+
+                  <div class="login-form">
+                      <div class="login-title">
+                          <span class="text">SIGN IN</span>
+                      </div><!-- End Title -->
+                      <form role="form" id="login-form" method="post" data-remote="true" action="/login_ajax" novalidate>
+                          <div class="row">
+                              <div class="col-md-6 col-sm-6">
+                                  <div class="input">
+                                      <input class="" id="email" type="email" name="email" value="" placeholder="${_('username@domain.com')}" required aria-required="true" aria-described-by="email-tip" />
+                                      <span class="tip tip-input" id="email-tip">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6">
+                                  <div class="input">
+                                      <input type="password" name="password" id="password" class="password-input" placeholder="Password">
+                                  </div>
+                              </div>
+                              <div class="col-md-12">
+                                  <div class="input clearfix">
+                                      <div class="form-actions">
+                                          <input type="submit" id="submit" class="submit-input grad-btn ln-tr" value="Log into ${platform_name}">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 clearfix">
+                                  <div class="custom-checkbox fl">
+                                      <input id="remember-yes" type="checkbox" name="remember" value="true" />
+                                      <label for="remember-yes">Remember Me</label>
+                                  </div>
+                              </div><!-- end remember -->
+                              <div class="col-md-6 col-sm-6 clearfix">
+                                  <div class="pull-right">
+                                      <a href="/register?next=${login_redirect_url}">Create New Account</a> / <a href="#forgot-password-modal">${_('Forgot password?')}</a>
+                                  </div>
+                              </div><!-- end forgot password -->
+                          </div><!-- end row -->
+                      </form><!-- End form -->
+                  </div><!-- end login form -->
+              </div><!-- end col-md-8/offset -->
+          </div><!-- end row -->
+      </div><!-- end container -->
+  </section><!-- End Login Page -->

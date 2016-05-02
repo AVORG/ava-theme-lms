@@ -1,0 +1,95 @@
+## mako
+<%page expression_filter="h"/>
+<%namespace name='static' file='static_content.html'/>
+<%namespace file='main.html' import="login_query"/>
+<%!
+from django.core.urlresolvers import reverse
+from django.utils.translation import ugettext as _
+
+from lms.djangoapps.ccx.overrides import get_current_ccx
+from microsite_configuration import microsite
+from microsite_configuration.templatetags.microsite import platform_name
+from openedx.core.djangolib.markup import Text, HTML
+from openedx.core.djangoapps.user_api.accounts.image_helpers import get_profile_image_urls_for_user
+
+# App that handles subdomain specific branding
+from branding import api as branding_api
+# app that handles site status messages
+from status.status import get_site_status_msg
+%>
+
+<%
+logo = 'logo-main-grey-text.png'
+header_class = 'alt static-header'
+
+if request.path == '/' :
+    logo = 'logo-main-white-text.png'
+    header_class = ''
+
+try:
+    course_id = course.id
+except:
+    # can't figure out a better way to get at a possibly-defined course var
+    course_id = None
+%>
+<%def name="is_active(page_name)">
+    <%
+        active_class = ''
+        if request.path == page_name:
+            active_class = 'current_page_item'
+    %>
+    ${active_class}
+</%def>
+<header id="header" class="${header_class}">
+    <div class="container">
+        <div class="logo-container fl clearfix">
+            <a href="/" class="ib">
+                <img src="${static.url('images/logo-main.png')}" class="fl" alt="Logo">
+                <span class="site-name"><img src="${static.url('images/'+logo)}"></span>
+            </a>
+        </div><!-- End Logo Container -->
+        <!-- ${request.path} -->
+        <nav class="main-navigation fr">
+            <ul class="clearfix">
+                % if not user.is_authenticated():
+                <li class="parent-item ${is_active('/')}">
+                    <a href="/" class="ln-tr">Home</a>
+                </li>
+                % endif
+                <li class="parent-item ${is_active('/about')}">
+                    <a href="/about" class="ln-tr">About</a>
+                </li>
+                <li class="parent-item ${is_active('/courses')}">
+                    <a href="/courses" class="ln-tr ">Browse Courses</a>
+                </li>
+                <li class="parent-item ${is_active('/dashboard') + is_active('/login')}">
+                    % if user.is_authenticated():
+                    <a href="/dashboard">Dashboard</a>
+                    % else:
+                    <a href="/login">Sign In</a>
+                    % endif
+                </li>
+                % if user.is_authenticated():
+                <li class="parent-item ${is_active('/account/settings')}">
+                    <a href="/account/settings">Settings</a>
+                </li>
+                <li class="parent-item ${is_active('/account/profile')}">
+                    <a href="/u/${user.username}">Profile</a>
+                </li>
+                <li class="parent-item">
+                    <a href="/logout">Sign Out</a>
+                </li>
+                % endif
+                % if not user.is_authenticated():
+                <li class="parent-item ${is_active('/register')}">
+                    <a href="/register${login_query()}" class="ln-tr">Register</a>
+                </li>
+                %endif
+            </ul>
+        </nav><!-- End NAV Container -->
+        <div class="mobile-navigation fr">
+            <a href="#" class="mobile-btn"><span></span></a>
+            <div class="mobile-container"></div>
+        </div><!-- end mobile navigation -->
+    </div>
+</header><!-- End Main Header Container -->

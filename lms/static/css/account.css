@@ -1,0 +1,156 @@
+textarea:last-child, input[type="text"]:last-child, input[type="email"]:last-child, input[type="password"]:last-child, input[type="tel"]:last-child {
+    margin-right: 0;
+}
+textarea, input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+    background: #fff;
+    border: 1px solid #c8c8c8;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.6),inset 0 0 3px 0 rgba(0,0,0,0.1);
+    box-sizing: border-box;
+    height: 35px;
+    padding: 5px 12px;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+.u-field {
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f1f1;
+    border: 1px dashed transparent;
+}
+.u-field-title {
+    width: 23.72881%;
+    display: inline-block;
+    font-size: 14px;
+    color: #767676;
+    vertical-align: top;
+    margin-bottom: 0;
+    -webkit-font-smoothing: antialiased;
+}
+.u-field-value {
+    width: 23.72881%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 14px;
+}
+.u-field-message {
+    padding-left: 10px;
+    width: 49.15254%;
+    display: inline-block;
+    vertical-align: top;
+    color: #919191;
+}
+.u-field-value select, .u-field-value input {
+    width: 100%;
+    font-size: 16px;
+}
+.u-field-dropdown.mode-edit button.u-field-value-display {
+    display: none;
+}
+.u-field-dropdown button.u-field-value-display, .u-field-dropdown button.u-field-value-display:active, .u-field-dropdown button.u-field-value-display:focus, .u-field-dropdown button.u-field-value-display:hover {
+    border-color: transparent;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    font-size: inherit;
+    font-weight: inherit;
+    text-shadow: none;
+}
+.sr {
+    background: #fff;
+    color: #000;
+}
+.sr {
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    margin: -1px;
+    height: 1px;
+    width: 1px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    word-wrap: normal;
+}
+.is-hidden {
+    display: none;
+}
+
+.ui-loading, .ui-loading-base, .wrapper-account-settings .ui-loading-indicator, .wrapper-account-settings .ui-loading-error, .view-profile .ui-loading-indicator {
+    font-size: 16px;
+    line-height: 23.68px;
+}
+.ui-loading-base, .wrapper-account-settings .ui-loading-indicator, .wrapper-account-settings .ui-loading-error, .view-profile .ui-loading-indicator, .ui-loading {
+    animation: fadeIn 0.25s linear 1;
+}
+.wrapper-account-settings .ui-loading-indicator, .wrapper-account-settings .ui-loading-error {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 60px;
+    text-align: center;
+}
+.account-settings-header-subtitle {
+    font-size: 16px;
+}
+.section-header {
+    font-size: 16px;
+    font-weight: 900;
+    margin: 40px 0px 20px 0px;
+}
+.view-profile .wrapper-profile {
+    min-height: 200px;
+}
+
+.view-profile .profile-self .wrapper-profile-field-account-privacy {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0 auto 0;
+    border: 1px solid #c8c8c8;
+    background-color: #e4e4e4;
+    padding: 15px 0;
+}
+.view-profile .wrapper-profile-sections {
+    padding: 0 30px;
+}
+.wrapper-account-settings, .view-profile .profile-self .wrapper-profile-field-account-privacy .u-field-account_privacy, .view-profile .wrapper-profile-sections {
+    box-sizing: border-box;
+    margin: 0 auto 0;
+    padding: 40px 0;
+    max-width: 1180px;
+    min-width: 760px;
+    width: 100%;
+}
+.view-profile .wrapper-profile-section-one {
+    width: 100%;
+    display: inline-block;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+.view-profile .profile-image-field {
+    float: left;
+}
+.view-profile .profile-section-one-fields {
+    float: left;
+    width: 31.76157%;
+    margin-left: 20px;
+}
+.view-profile .profile-section-one-fields .u-field {
+    margin-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+}
+.view-profile .profile-section-two-fields .u-field.mode-placeholder {
+    padding: 20px;
+    border: 2px dashed #c8c8c8;
+}
+.view-profile .profile-section-two-fields .u-field-textarea.editable-toggle {
+    cursor: pointer;
+}
+.view-profile .profile-section-two-fields .u-field-textarea {
+    margin-bottom: 10px;
+    padding: 10px 15px 15px 15px;
+}
+.u-field.mode-placeholder {
+    border: 2px dashed transparent;
+    border-radius: 3px;
+}

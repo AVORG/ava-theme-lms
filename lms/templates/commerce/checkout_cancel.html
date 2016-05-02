@@ -1,0 +1,14 @@
+<%! from django.utils.translation import ugettext as _ %>
+
+<%inherit file="../main-ava.html" />
+
+<%block name="pagetitle">${_("Checkout Cancelled")}</%block>
+<section class="full-section" style="margin-top: 30px">
+    <div class="container center">
+        <h2>${_("Checkout Cancelled")}</h2>
+        <p>
+        ${ _(u"Your transaction has been cancelled. If you feel an error has occurred, contact {email}.").format(
+        email="<a href=\"mailto:{email}\">{email}</a>".format(email=payment_support_email)) }
+        </p>
+    </div>
+</section>
