@@ -33,18 +33,18 @@
                     queue: false,
                 }
             });
-            return false;            
+            return false;
         }); // data-filter
-        var $optionSets = $('.filter'), $optionLinks = $optionSets.find('a'); 
+        var $optionSets = $('.filter'), $optionLinks = $optionSets.find('a');
         $optionLinks.on("click", function() {
-            var $this = $(this); 
+            var $this = $(this);
             // don't proceed if already active
-            if ( $this.hasClass('active') ) { 
-                return false; 
-            } 
-            var $optionSet = $this.parents('.filter'); 
-            $optionSet.find('.active').removeClass('active'); 
-            $this.addClass('active');  
+            if ( $this.hasClass('active') ) {
+                return false;
+            }
+            var $optionSet = $this.parents('.filter');
+            $optionSet.find('.active').removeClass('active');
+            $this.addClass('active');
         });
 
         /***************** Waypoints ******************/
@@ -58,12 +58,12 @@
         }, { offset: '75%' }); // Skills
 
     });
-    
+
     /***************** Slider Revolution ******************/
 
     $('.tp-banner').revolution({
         delay:9000,
-        startheight:616,
+        startheight:540,
         navigationVAlign: "center",
         soloArrowLeftHOffset: 100,
         soloArrowLeftVOffset: 10,
@@ -76,7 +76,7 @@
 
     $('.fullscreen').revolution({
         delay:9000,
-        startheight:616,
+        startheight:540,
         navigationVAlign: "center",
         hideTimerBar: "on",
         fullScreen: "on",
@@ -164,7 +164,7 @@
 
     /***************** Tabs ******************/
 
-    $('ul.tabs li').on("click", function() {        
+    $('ul.tabs li').on("click", function() {
         var tab_id = $(this).attr('data-tab');
         $('ul.tabs li').removeClass('active');
         $('.tab-content').removeClass('active');
@@ -202,15 +202,15 @@
 
     $('.mobile-navigation').find('.haschild').each(function() {
         var mobile_submenu = $(this).find('ul:first');
-        $(this).hover(function() { 
+        $(this).hover(function() {
             mobile_submenu.stop().css({overflow:'hidden', height:'auto', display:'none', paddingTop:0}).slideDown(500, function() {
                 $(this).css({overflow:'visible', height:'auto'});
-            }); 
+            });
         },function() {
-            mobile_submenu.stop().slideUp(500, function() {   
+            mobile_submenu.stop().slideUp(500, function() {
                 $(this).css({overflow:'hidden', display:'none'});
             });
-        }); 
+        });
     });
 
     $('.mobile-navigation').find('.haschild').children('a').one('click',function() {

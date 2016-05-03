@@ -1,6 +1,5 @@
 <%namespace name='static' file='../static_content.html'/>
 <%!
-from microsite_configuration import microsite
 from django.utils.translation import ugettext as _
 from django.core.urlresolvers import reverse
 from courseware.courses import get_course_about_section
@@ -11,11 +10,11 @@ from openedx.core.lib.courses import course_image_url
 
 <%inherit file="../main-ava.html" />
 <%block name="headextra">
-  ## OG (Open Graph) title and description added below to give social media info to display
-  ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
-  <meta property="og:title" content="${course.display_name_with_default}" />
-  <meta property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
-  <style>
+    ## OG (Open Graph) title and description added below to give social media info to display
+    ## (https://developers.facebook.com/docs/opengraph/howtos/maximizing-distribution-media-content#tags)
+    <meta property="og:title" content="${course.display_name_with_default_escaped}" />
+    <meta property="og:description" content="${get_course_about_section(request, course, 'short_description')}" />
+    <style>
         .remodal-bg.video-box.remodal-is-opening,
         .remodal-bg.video-box.remodal-is-opened {
             filter: none;
@@ -131,11 +130,11 @@ from openedx.core.lib.courses import course_image_url
   <script src="${static.url('js/course_info.js')}"></script>
 </%block>
 
-<%block name="pagetitle">${course.display_name_with_default}</%block>
+<%block name="pagetitle">${course.display_name_with_default_escaped}</%block>
 <%block name="page_header">
     <%include file="../page_header.html" args="page_properties={
       'title': 'Course Details',
-      'description': course.display_name_with_default,
+      'description': course.display_name_with_default_escaped,
       'current_page': 'Course Details'
     }" />
 </%block>
@@ -150,14 +149,14 @@ from openedx.core.lib.courses import course_image_url
                         % if get_course_about_section(request, course, "video"):
                             <a href="#intro-video-modal" class="media">
                               <div class="hero">
-                                <img src="${course_image_urls['course']}" alt="" class="img-responsive" />
+                                <img src="${course_image_urls['large']}" alt="" class="img-responsive" />
                                 <div class="play-intro"><i class="fa fa-play play-button"></i></div>
                               </div>
                             </a>
                         %else:
                             <div class="media">
                               <div class="hero">
-                                <img src="${course_image_urls['course']}" alt="" class="img-responsive"/>
+                                <img src="${course_image_urls['large']}" alt="" class="img-responsive"/>
                               </div>
                             </div>
                         % endif
@@ -165,7 +164,7 @@ from openedx.core.lib.courses import course_image_url
                     </div>
                     <div class="col-md-4">
                         <div class="course-title">
-                            <h4>${course.display_name_with_default}</h4>
+                            <h4>${course.display_name_with_default_escaped}</h4>
                         </div>
                         <div class="course-short-description">
                             ${get_course_about_section(request, course, 'short_description')}
@@ -183,7 +182,7 @@ from openedx.core.lib.courses import course_image_url
                                 <div class="value">${get_course_about_section(request, course, "effort")} HRS</div>
                                 % endif
                                 %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
-                                <div class="label">Price</div>
+                                <div class="label">${_("Price")}</div>
                                 <div class="value">${course_price}</div>
                                 %endif
                                 <div class="label">Partner</div>

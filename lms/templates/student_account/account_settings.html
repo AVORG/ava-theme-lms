@@ -18,18 +18,18 @@ from django.utils.translation import ugettext as _
       'current_page': ''
     }" />
 </%block>
-
 % if duplicate_provider:
     <section>
         <%include file='/dashboard/_dashboard_third_party_error.html' />
     </section>
 % endif
-
-<section class="full-section">
+<article class="post">
     <div class="container">
-        <div class="wrapper-account-settings"></div>
+        <div class="white-shadow-background">
+            <div class="wrapper-account-settings"></div>
+        </div>
     </div>
-</section>
+</article>
 
 <%block name="headextra">
     <link rel="stylesheet" href="${static.url('css/account.css')}">

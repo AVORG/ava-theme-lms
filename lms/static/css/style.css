@@ -142,8 +142,8 @@ body {
 	margin-right: 17px;
 	background-color: #383c4b;
 }
-.btn.orange-btn {
-	background-color: #4b4f5c;
+.btn.warning-btn {
+	background-color: #a72121;
 }
 .grad-btn, .course-search.alt .container, .post-type-icon {
 	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .25), inset 0 1px 0 0 rgba(255, 255, 255, .05);
@@ -1002,13 +1002,13 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	margin-top: 30px;
 }
 .latest-courses-section .course {
+	border: 1px #ededed solid;
 	position: relative;
 	background: #fff;
-	padding-bottom: 23px;
-	margin: 4px 0 3px;
+	margin: 4px 0 20px 0;
 	border-radius: 4px;
 	box-shadow: 0px 2px 1px 0px rgba(46, 122, 163, 0.13), inset 0px -2px 0px 0px rgba(46, 122, 163, 0.12);
-	min-height: 380px;
+	min-height: 350px;
 }
 
 .latest-courses-section .course .featured-badge {

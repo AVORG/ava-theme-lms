@@ -1107,6 +1107,7 @@ img.tp-slider-alternative-image	{	width:100%; height:auto;}
 /** BULLETS **/
 .tpclear { clear:both}
 .tp-bullets { z-index:20; position:absolute;
+	display: none; /** hide for now */
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	-moz-opacity: 1;
 	-khtml-opacity: 1;

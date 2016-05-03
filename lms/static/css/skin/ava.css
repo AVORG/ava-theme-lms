@@ -119,7 +119,7 @@ header .main-navigation li.parent-item ul.submenu ul {
 	border-radius: 3px;
 }
 .dashboard-message-border {
-	border: 1px solid #24d830;
+	border: 1px solid #1e5370;
 	padding: 30px;
 	border-radius: 3px;
 }
@@ -394,7 +394,6 @@ hr.style-one {
 	color: #1f8fc1;
 	text-decoration: none;
 }
-
 /* COURSE DETAIL PAGE */
 .full-section .container .content h2 {
 	font-size: 20px;
@@ -414,6 +413,10 @@ hr.style-one {
 }
 .full-section .container .content .course-staff .teacher p {
 
+}
+.response h3 {
+	font-size: 16px;
+	font-weight: bold;
 }
 /* Loading Animation */
 .loading-animation {

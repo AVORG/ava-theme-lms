@@ -12,18 +12,13 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
     vertical-align: top;
     -webkit-font-smoothing: antialiased;
 }
-.header-title {
-    font-size: 20px;
-    font-weight: 900;
-    margin: 0px 0px 20px 0px;
-}
 .u-field {
     padding: 20px 0;
     border-bottom: 1px solid #f1f1f1;
     border: 1px dashed transparent;
 }
 .u-field-title {
-    width: 23.72881%;
+    width: 40%;
     display: inline-block;
     font-size: 14px;
     vertical-align: top;
@@ -33,17 +28,10 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
     -webkit-font-smoothing: antialiased;
 }
 .u-field-value {
-    width: 23.72881%;
+    width: 30%;
     display: inline-block;
     vertical-align: top;
     font-size: 14px;
-}
-.u-field-message {
-    padding-left: 20px;
-    width: 49.15254%;
-    display: inline-block;
-    vertical-align: top;
-    color: #919191;
 }
 .u-field-value select, .u-field-value input {
     width: 100%;
@@ -106,13 +94,14 @@ textarea, input[type="text"], input[type="email"], input[type="password"], input
     min-height: 200px;
 }
 
-.view-profile .profile-self .wrapper-profile-field-account-privacy {
+.wrapper-profile-field-account-privacy {
     box-sizing: border-box;
     width: 100%;
     margin: 0 auto 0;
     border: 1px solid #c8c8c8;
     background-color: #e4e4e4;
-    padding: 15px 0;
+    padding: 0 0;
+    text-align: center;
 }
 .view-profile .wrapper-profile-sections {
     padding: 0 30px;
@@ -190,9 +179,7 @@ input.upload-button-input{
     text-align: center;
     color: orange;
 }
-.wrapper-u-field textarea {
-    width: 400px; height: 300px;
-}
+
 .u-field-header span {
     text-align: left;
     font-weight: 600;
@@ -201,9 +188,7 @@ input.upload-button-input{
 #u-field-value-bio{
     width: 100%;
 }
-.u-field-textarea textarea {
-    width: 300px; height: 300px;
-}
+
 .view-profile .profile-section-two-fields .u-field.mode-placeholder {
     padding: 20px;
     border: 2px dashed #c8c8c8;
@@ -226,4 +211,33 @@ input.upload-button-input{
 }
 .view-profile .profile-section-two-fields .u-field-textarea.editable-toggle {
     cursor: pointer;
+}
+.u-field-remove-button {
+    position: relative;
+    display: block;
+    width: 120px;
+    text-align: center;
+    background-color:#FFF;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:0px;
+    border: 0;
+    display:inline-block;
+    cursor:pointer;
+    font-size:12px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fcfbfb;
+    text-decoration:none;
+}
+.remove-button-title {
+    position: relative;
+    bottom: 3px;
+}
+.wrapper-u-field textarea {
+    width: 100%;
+    font-size: 14px;
+}
+
+.u-field-value a {
+    color: #000;
 }

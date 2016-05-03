@@ -128,35 +128,35 @@ import calendar
 
                         <input type="hidden" name="csrfmiddlewaretoken" value="${ csrf_token }">
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 <label for="name">${_('Full Name')} *</label>
                                 <div class="input">
                                     <input id="name" type="text" name="name" value="${name}" placeholder="${_('example: Jane Doe')}" required aria-required="true" aria-describedby="name-tip" />
                                     <span class="tip tip-input" id="email-tip">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 <label for="username">${_('Public Username')} *</label>
                                 <div class="input">
                                     <input id="username" type="text" name="username" value="${username}" placeholder="${_('example: JaneDoe')}" required aria-required="true" aria-describedby="username-tip"/>
                                     <span class="tip tip-input" id="username-tip">${_('Will be shown in any discussions or forums you participate in')} <strong>(${_('cannot be changed later')})</strong></span>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 <label for="email">${_('Email')} *</label>
                                 <div class="input">
                                     <input id="email" type="email" name="email" value="${email}" placeholder="${_('example: username@domain.com')}" required aria-required="true" />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 <label for="name">${_('Password')} *</label>
                                 <div class="input">
                                      <input id="password" type="password" name="password" value="" required aria-required="true" />
                                 </div>
                             </div>
 
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                     <div class="field optional select" id="field-country">
                                         <label for="country">Country</label>
                                         <select id="country" name="country" >
@@ -413,7 +413,7 @@ import calendar
                                         </select>
                                       </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-6">
                                     <div class="field optional select" id="field-education-level">
                                         <label for="education-level">Highest Level of Education Completed</label>
                                         <select id="education-level" name="level_of_education" >
@@ -430,7 +430,7 @@ import calendar
                                         </select>
                                       </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-6">
                                       <div class="field optional select" id="field-gender">
                                         <label for="gender">Gender</label><br/>
                                         <select id="gender" name="gender" >
@@ -441,7 +441,7 @@ import calendar
                                         </select>
                                       </div>
                                 </div>
-                                <div class="col-md-6 col-sm-6">
+                                <div class="col-md-6">
                                       <div class="field optional select" id="field-yob">
                                         <label for="yob">Year of Birth</label><br/>
                                         <select id="yob" name="year_of_birth" >
@@ -569,7 +569,7 @@ import calendar
                                         </select>
                                       </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 % if has_extauth_info is UNDEFINED or ask_for_tos :
                                 <div class="field required checkbox" id="field-tos">
                                   <input id="tos-yes" type="checkbox" name="terms_of_service" value="true" required aria-required="true" />
@@ -579,7 +579,7 @@ import calendar
                                 </div>
                                 % endif
                             </div>
-                            <div class="col-md-6 col-sm-6">
+                            <div class="col-md-6">
                                 % if settings.REGISTRATION_EXTRA_FIELDS['honor_code'] != 'hidden':
                                 ## If the stanford theme isn't enabled, check if we have an Honor Code link in our marketing map
                                 % if marketing_link('HONOR') and marketing_link('HONOR') != '#':

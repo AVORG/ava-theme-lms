@@ -203,7 +203,12 @@ from openedx.core.djangolib.markup import Text, HTML
     <input name="course_id" id="unenroll_course_id" type="hidden" >
     <input name="enrollment_action" type="hidden" value="unenroll">
     <div class="submit">
-      <input id="unenroll-button" name="unenroll_submit" class="btn grad-btn read-btn" style="height: 50px; color: #fff;" type="submit" value="UNENROLL" tabindex="2">
+        <div class="col-md-6">
+            <input data-remodal-action="cancel" id="cancel-button" name="cancel_submit" class="btn grad-btn read-btn" style="height: 50px; color: #fff; cursor: pointer;" type="button" value="CANCEL" tabindex="1">
+        </div>
+        <div class="col-md-6">
+            <input id="unenroll-button" name="unenroll_submit" class="btn warning-btn grad-btn read-btn" style="height: 50px; color: #fff;" type="submit" value="UNENROLL" tabindex="2">
+        </div>
     </div>
   </form>
 </div>

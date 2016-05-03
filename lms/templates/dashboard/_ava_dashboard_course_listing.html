@@ -33,6 +33,7 @@ from student.helpers import (
 
 <%namespace name='static' file='../static_content.html'/>
 <% course_target = reverse('info', args=[unicode(course_overview.id)]) %>
+<div class="row" style="padding-bottom: 20px;">
     <div class="col-sm-5">
         <img src="${course_overview.course_image_url}" class="img-responsive" alt="Course Image" style="margin-bottom: 15px">
     </div>
@@ -133,4 +134,5 @@ from student.helpers import (
              <span class="separator">|</span>
                 <a href="${course_target}" class="">View Course</a>
         </div>
-    </div><!-- End col-md-12 -->
+    </div>
+</div>

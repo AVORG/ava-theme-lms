@@ -167,13 +167,13 @@ from third_party_auth import provider, pipeline
                       </div><!-- End Title -->
                       <form role="form" id="login-form" method="post" data-remote="true" action="/login_ajax" novalidate>
                           <div class="row">
-                              <div class="col-md-6 col-sm-6">
+                              <div class="col-md-6">
                                   <div class="input">
                                       <input class="" id="email" type="email" name="email" value="" placeholder="${_('username@domain.com')}" required aria-required="true" aria-described-by="email-tip" />
                                       <span class="tip tip-input" id="email-tip">${_("This is the e-mail address you used to register with {platform}").format(platform=platform_name)}</span>
                                   </div>
                               </div>
-                              <div class="col-md-6 col-sm-6">
+                              <div class="col-md-6">
                                   <div class="input">
                                       <input type="password" name="password" id="password" class="password-input" placeholder="Password">
                                   </div>
@@ -191,7 +191,7 @@ from third_party_auth import provider, pipeline
                                       <label for="remember-yes">Remember Me</label>
                                   </div>
                               </div><!-- end remember -->
-                              <div class="col-md-6 col-sm-6 clearfix">
+                              <div class="col-md-6 clearfix">
                                   <div class="pull-right">
                                       <a href="/register?next=${login_redirect_url}">Create New Account</a> / <a href="#forgot-password-modal">${_('Forgot password?')}</a>
                                   </div>

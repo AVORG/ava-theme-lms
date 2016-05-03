@@ -71,10 +71,10 @@ except:
                 </li>
                 % if user.is_authenticated():
                 <li class="parent-item ${is_active('/account/settings')}">
-                    <a href="/account/settings">Settings</a>
+                    <a href="/account/settings">Account</a>
                 </li>
-                <li class="parent-item ${is_active('/account/profile')}">
-                    <a href="/u/${user.username}">Profile</a>
+                <li class="parent-item ${is_active('/u/'+user.username)}">
+                    <a href="/u/${user.username}#about_me">Profile</a>
                 </li>
                 <li class="parent-item">
                     <a href="/logout">Sign Out</a>

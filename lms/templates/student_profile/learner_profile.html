@@ -17,18 +17,20 @@ from openedx.core.djangolib.js_utils import dump_js_escaped_json
     }" />
 </%block>
 <%block name="headextra">
-    <link rel="stylesheet" href="${static.url('css/account.css')}">
+    <link rel="stylesheet" href="${static.url('css/profile.css')}">
 </%block>
-<section class="full-section">
+<article class="post">
     <div class="container">
-        <div class="message-banner" aria-live="polite"></div>
-        <div class="wrapper-profile">
-            <div class="ui-loading-indicator">
-                <p><span class="spin"><i class="icon fa fa-refresh" aria-hidden="true"></i></span> <span class="copy">${_("Loading")}</span></p>
+        <div class="white-shadow-background">
+            <div class="message-banner" aria-live="polite"></div>
+            <div class="wrapper-profile">
+                <div class="ui-loading-indicator">
+                    <p><span class="spin"><i class="icon fa fa-refresh" aria-hidden="true"></i></span> <span class="copy">${_("Loading")}</span></p>
+                </div>
             </div>
         </div>
     </div>
-</section>
+</article>
 <%block name="js_extra">
 <%static:require_module module_name="js/student_profile/views/learner_profile_factory" class_name="LearnerProfileFactory">
     var options = ${data | n, dump_js_escaped_json};
