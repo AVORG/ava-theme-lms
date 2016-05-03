@@ -1,0 +1,15 @@
+<%!
+from django.utils.translation import ugettext as _
+from django.core.urlresolvers import reverse
+%>
+
+<div class="wrapper-footer wrapper">
+  <footer class="primary" role="contentinfo">
+
+    <div class="footer-content-primary">
+      <div class="colophon">
+        <p>&copy; ${settings.COPYRIGHT_YEAR} <a data-rel="edx.org" href="${marketing_link('ROOT')}" rel="external">${settings.PLATFORM_NAME}</a>.</p>
+      </div>
+    </div>
+  </footer>
+</div>
