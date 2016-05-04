@@ -181,14 +181,14 @@ from openedx.core.lib.courses import course_image_url
                                 <div class="label">Effort</div>
                                 <div class="value">${get_course_about_section(request, course, "effort")} HRS</div>
                                 % endif
-                                %if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
+                                ##%if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):
                                 <div class="label">${_("Price")}</div>
                                 <div class="value">${course_price}</div>
-                                %endif
+                                ##%endif
                                 <div class="label">Partner</div>
                                 <div class="value">${course.display_org_with_default | h}</div>
                                 %if user.is_authenticated() and registered:
-                                  <a href="${course_target}" class="btn grad-btn orange-btn join-btn">${_("You are enrolled")}</a>
+                                        <a href="${course_target}" class="btn grad-btn orange-btn join-btn">${_("You are enrolled")}</a>
                                 %elif in_cart:
                                   ${_('<a href="{cart_link}" class="btn grad-btn orange-btn join-btn">Course in cart</a>.').format(cart_link=cart_link)}
                                 % elif is_course_full:

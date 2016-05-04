@@ -418,6 +418,23 @@ hr.style-one {
 	font-size: 16px;
 	font-weight: bold;
 }
+.teacher-image {
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    height: 115px;
+    float: left;
+    width: 115px;
+    background: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200, 200, 200);
+    margin: 0px 15px 0px 0px;
+    overflow: hidden;
+    padding: 1px;
+}
 /* Loading Animation */
 .loading-animation {
   margin: 100px auto;
