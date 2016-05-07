@@ -3,7 +3,7 @@ from django.utils.translation import ugettext as _
 %>
 <%namespace name='static' file='../static_content.html'/>
 
-<%inherit file="../main.html" />
+<%inherit file="../main-ava.html" />
 <%block name="bodyclass">register verification-process step-requirements</%block>
 
 <%block name="pagetitle">${page_title}</%block>
@@ -48,14 +48,15 @@ from django.utils.translation import ugettext as _
         </div>
     </div>
 </div>
-
-<div class="container">
-    <section class="wrapper carousel">
-        <div id="receipt-container" class="pay-and-verify hidden" data-is-payment-complete='${is_payment_complete}'
-             data-platform-name='${platform_name}' data-verified='${verified}' data-username='${username}'>
-            <h1>${_("Loading Order Data...")}</h1>
-            <span>${ _("Please wait while we retrieve your order details.") }</span>
-        </div>
-    </section>
+<section class="full-section">
+    <div class="container">
+        <section class="wrapper carousel">
+            <div id="receipt-container" class="pay-and-verify hidden" data-is-payment-complete='${is_payment_complete}'
+                 data-platform-name='${platform_name}' data-verified='${verified}' data-username='${username}'>
+                <h1>${_("Loading Order Data...")}</h1>
+                <span>${ _("Please wait while we retrieve your order details.") }</span>
+            </div>
+        </section>
+    </div>
 </div>
 </%block>
