@@ -1,0 +1,78 @@
+<%page expression_filter="h"/>
+<%! from django.utils.translation import ugettext as _ %>
+<%inherit file="../main-ava.html" />
+
+<%block name="pagetitle">${_("FAQ")}</%block>
+<%block name="page_header">
+    <%include file="../page_header.html" args="page_properties={
+      'title': 'FREQUENT QUESTIONS',
+      'description': '',
+      'current_page': ''
+    }" />
+</%block>
+<style>
+
+    .faq .s1 {
+        font-weight: 700;
+        font-size: 16px !important;
+    }
+    .text-center {
+        text-align: center;
+    }
+</style>
+<section class="full-section">
+    <div class="container">
+        <div class="faq">
+            <div class="row">
+                <div class="rte col-md-offset-2 col-md-8 col-sm-12 col-sm-offset-0">
+                <p class="p1"><span class="s1"><b>What is AudioVerse?  <br></b></span>
+                    AudioVerse is an online collection of thousands of Bible-based media content that is available for anyone in the world to stream and download for free.  This ministry has a global reach that impacts thousands of individuals every single day.  AudioVerse is a 501(c)(3) nonprofit organization in the United States of America.  For more information, visit the AudioVerse homepage here: audioverse.org.
+                </p>
+                <p class="p1"><span class="s1"><b>What is AudioVerse Advance (“AVA”)?<br></b></span>
+                    AudioVerse Advance is an online Bible training school developed by the AudioVerse team that seeks to deliver practical, high-quality, Bible-based, faith-affirming training to anyone in the world, anywhere they can get online, any time of day.  This dynamic online learning service features courses taught by godly instructors on relevant topics that will best equip individuals for service.
+                </p>
+                <p class="p1"><span class="s1"><b>How does AudioVerse Advance establish their partnerships?<br></b></span>
+                    AVA is very intentional about maintaining quality content while offering courses on topics most relevant to our users.  The goal is not to simply have the largest quantity of content.  For that reason, the AVA team carefully selects the content providers featured on AVA.
+                </p>
+                <p class="p1"><span class="s1"><b>Am I allowed to share my login information with other people?<br></b></span>
+                    No, you are not allowed to share login information when you have purchased an individual license as stated in the terms of service page.  The course materials are designed for individual access through each login and so a shared login would greatly diminish the learning experience.  However, group licenses are available at a discount for multiple individuals to gain access to courses.  For information regarding obtaining a group license please refer to our
+                    <a href="/discounts">group discount page</a>.
+                </p>
+                <p class="p1"><span class="s1"><b>What if I want to purchase a class or a set of class for a group? (i.e. family, church, class etc.)<br></b></span>
+                    Please refer to our <a href="/discounts">group discount page</a>.
+                </p>
+                <p class="p1"><span class="s1"><b>How long does it take to take finish a class?<br></b></span>
+                    Each class varies in length. To determine the length for a class, look at the course information page to see the estimated amount of time for each class.  Keep in mind however, that each class will be self-paced which means that it is the student who decides how fast or slow he or she would like to complete the course.
+                </p>
+                <p class="p1"><span class="s1"><b>How long will I own this class or classes that I purchase through the AVA platform?<br></b></span>
+                    Once you have purchased a class, it will not expire and you will not need to re-purchase them again even if modifications may be made to the course content.  This means that you can login to the AVA platform and access the class or a series of classes that you purchased at any time.
+                </p>
+                <p class="p1"><span class="s1"><b>Are the programs accredited?  What do I achieve after completing a course?<br></b></span>
+                    The courses offered on AVA are not accredited in any form.  However, when a student successfully completes a course, he or she will receive an official certificate that validates that they have successfully completed the course and have satisfied the requirements for passing.
+                </p>
+                <p class="p1"><span class="s1"><b>How are payments made?<br></b></span>
+                    Payments can be made via credit card, debit card, or PayPal.  After selecting to enroll into a class you will be directed to the PayPal checkout portal where you will need to complete the payment process in order to complete enrollment into your selected course.  Payment information will be collected in a secure manner by PayPal.  Please refer to our
+                    <a href="/privacy">privacy policy page</a> for more information on how we maintain your rights to privacy.
+                </p>
+                <p class="p1"><span class="s1"><b>What is the current refund policy?<br></b></span>
+                    Please refer to the <a href="/tos">terms of services page</a>.
+                </p>
+                <p class="p1"><span class="s1"><b>How can I donate to AudioVerse Advance?<br></b></span>
+                    Thank you for your interest in support the ministry of AVA!  Please refer to our donate page and simply follow the instructions.
+                </p>
+                <p class="p1"><span class="s1"><b>How can I share AudioVerse Advance with other people?<br></b></span>
+                    Feel free to share AudioVerse Advance with others by clicking on our Facebook and Twitter links at the bottom of this page.
+                </p>
+                <p class="p1"><span class="s1"><b>Can I contact the instructors of the course?  How involved will the instructors be in the course?<br></b></span>
+                    Instructors will generally be unavailable to monitor the classes.  However, the AVA staff will monitor the courses and assist with your questions and concerns as far as possible.  For any questions and concerns related to class content please email contact@audioverse.org.
+                </p>
+                <p class="p1"><span class="s1"><b>Is this available on mobile apps?<br></b></span>
+                    AVA is not currently available as a mobile app.  However, there are plans to provide this feature in the future. Sign up for the newsletter to be updated when it becomes available.  If you’re interested, you can download our AudioVerse app that includes over 7,000 sermons and seminars that can be downloaded by speaker, event, and topic. (Now available for both Apple and Android)
+                </p>
+                <p class="p1"><span class="s1"><b>Who do I contact for help?<br></b></span>
+                    Contact us through the <a href="/contact">Contact Page</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
