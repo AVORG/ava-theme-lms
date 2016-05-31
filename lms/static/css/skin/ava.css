@@ -216,7 +216,7 @@ hr.style-one {
     background: #333;
     background-image: linear-gradient(to right, #ccc, #ccc, #ccc);
 }
-#register-form label {
+#register-form label, #contact_form label {
 	position: relative;
 	top: 15px;
 	font-weight: 600;
@@ -226,7 +226,7 @@ hr.style-one {
 	margin-bottom: 0px;
 	display: inline;
 }
-#register-form .field {
+#register-form .field, #contact_form-form .field  {
 	padding-top: 10px;
 }
 #register-form .field label {
