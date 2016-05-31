@@ -10,31 +10,7 @@
 
         /***************** Isotope Filter ******************/
 
-        var $container = $(".portfolio-items");
-        if ($container.length) {
-            $container.isotope({
-                filter: "*",
-                animationOptions: {
-                    duration: 750,
-                    itemSelector: '.isotope-item',
-                    easing: "linear",
-                    queue: false,
-                }
-            });
-        } // intialize
-        $(".filter li a").on("click", function() {
-            var selector = $(this).attr("data-filter");
-            $container.isotope({
-                filter: selector,
-                animationOptions: {
-                    duration: 750,
-                    itemSelector: '.isotope-item',
-                    easing: "linear",
-                    queue: false,
-                }
-            });
-            return false;
-        }); // data-filter
+        
         var $optionSets = $('.filter'), $optionLinks = $optionSets.find('a');
         $optionLinks.on("click", function() {
             var $this = $(this);
@@ -46,16 +22,6 @@
             $optionSet.find('.active').removeClass('active');
             $this.addClass('active');
         });
-
-        /***************** Waypoints ******************/
-
-        $('.home-skills').waypoint(function() {
-            $('.home-skills .skillbar').each(function(){
-                $(this).find('.skillbar-bar').animate({
-                    width:$(this).attr('data-percent')
-                },1500);
-            });
-        }, { offset: '75%' }); // Skills
 
     });
 

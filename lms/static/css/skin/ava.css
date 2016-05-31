@@ -763,3 +763,15 @@ hr.style-one {
    font-size: 24px;
    line-height: 35.52px
 }
+.comment-form .error {
+	color: #A0050E;
+	float: right;
+	position: relative;
+	top: 10px;
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+.comment-form .valid {
+	background-color: #FFFFFF;
+
+}

@@ -12,6 +12,7 @@
     }" />
 </%block>
 <%block name="js_extra">
+    <script src="${static.url('js/jquery.validate.min.js')}"></script>
     <script src="${static.url('js/ava_contact_form.js')}"></script>
 </%block>
 % if not post_complete:
@@ -19,7 +20,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-
                     <div class="comment-form">
                     <form class="well form-horizontal" action=" " method="post"  id="contact_form">
                         <input type="hidden" value="${ csrf_token }" name="csrfmiddlewaretoken">
@@ -33,16 +33,16 @@
                         </div>
                         <!-- Text input-->
                         <div class="col-md-12 input">
-                            <label>Full Name</label> *
+                            <label>Full Name</label>
                             <div class="inputGroupContainer">
                               <div class="input-group">
-                                  <input  name="full_name" placeholder="example: Jane Doe" class="form-control"  type="text">
+                                  <input name="full_name" placeholder="example: Jane Doe" class="form-control"  type="text">
                               </div>
                             </div>
                         </div>
                         <!-- Text input-->
                         <div class="col-md-12 input">
-                          <label>E-Mail</label> *
+                          <label>E-Mail</label>
                             <div class="inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"></span>
@@ -52,7 +52,7 @@
                         </div>
                         <div class="col-md-12">
                             <div class="field optional select">
-                                <label for="contact-group">Where should be send your message?</label><br />
+                                <label for="contact-group">Where should we send the message?</label><br />
                                 <select name="contact-group" style="margin-top: 20px;">
                                   <option value="general">General Inquiry</option>
                                   <option value="billing">Billing</option>
@@ -71,7 +71,7 @@
                         </div>
                         <p>
                         <div class="col-md-12 input">
-                            <input id="submit" type="submit" class="submit-input grad-btn ln-tr" value="Send Message" style="position:relative; right:0px; bottom: 0px; margin-top: 15px; float: right;">
+                            <input id="submit" type="submit" class="submit-input grad-btn ln-tr" value="Send Message" style="position:relative; right:0px; bottom: 0px; margin-top: 25px; float: right;">
                         </div>
                         <p>
                     </form>
@@ -81,14 +81,6 @@
         </div>
     </section>
 % else:
-    <pre>
-    Full Name ${ full_name }
-    Contact Group ${ contact_group }
-    Comment ${ comment }
-    Email ${ email }
-    Message ${ message }
-    Email To ${ email_to }
-    </pre>
     <section class="full-section">
         <div class="container center">
             <h2>${_("Thank You")}</h2>
