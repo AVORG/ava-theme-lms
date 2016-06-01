@@ -3,10 +3,7 @@
     <div class="tp-banner">
         <ul>
             <li data-transition="random" data-slotamount="7" data-masterspeed="1500">
-                <!-- MAIN IMAGE -->
                 <img src="${static.url('images/content/slide-default-1.jpg')}" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-                <!-- LAYERS -->
-                <!-- LAYER NR. 1 -->
                 <div class="tp-caption sft skewtoleft tp-resizeme start white"
                     data-y="245"
                     data-x="center"
@@ -17,9 +14,21 @@
                     data-easing="Power3.easeInOut"
                     data-endspeed="300"
                     style="z-index: 2">
-                    <h2 class="slide-title">We Help You Learn What You Love</h2>
+                    <div class="vertical-middle" style="position: relative; top: -20px;">
+    					<div class="col-sm-4">
+    						<img class="slogan_img" src="${static.url('images/inspire-tp.png')}">
+    						<h1 class="t300 ls1 slogan_text">Inspire.</h1>
+    					</div>
+    					<div class="col-sm-4">
+    						<img class="slogan_img_instruct" src="${static.url('images/instruct-tp.png')}">
+    						<h1 class="t300 ls1 slogan_text">Instruct.</h1>
+    					</div>
+    					<div class="col-sm-4">
+    						<img class="slogan_img" src="${static.url('/static/images/interact-tp.png')}">
+    						<h1 class="t300 ls1 slogan_text">Interact.</h1>
+    					</div>
+				    </div>
                 </div>
-                <!-- LAYER NR. 2 -->
                 <div class="tp-caption black randomrotate skewtoleft tp-resizeme start"
                     data-x="center"
                     data-hoffset="0"
@@ -32,14 +41,14 @@
                     data-elementdelay="0.1"
                     data-endelementdelay="0.1"
                     data-endspeed="500" style="z-index: 99; white-space: pre-line;">
-                    <p class="slide-description">Lorem Ipsum is simply dummy of the printing and typesetting 's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p class="slide-description">Be inspired by the Truth.  Be instructed in the Truth.  Interact to share the Truth.
+                        <a href="${static.url('/about')}"><button class="slide-more">Learn More</button></a>
+                    </p>
                 </div>
-            </li><!-- end 1st slide -->
+            </li>
+            <!-- end 1st slide -->
             <li data-transition="random" data-slotamount="7" data-masterspeed="1000">
-                <!-- MAIN IMAGE -->
                 <img src="${static.url('images/content/slide-default-0.jpg')}" alt="slidebg1" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
-                <!-- LAYERS -->
-                <!-- LAYER NR. 1 -->
                 <div class="tp-caption sft skewtoleft tp-resizeme start white"
                     data-y="245"
                     data-x="center"
@@ -50,9 +59,8 @@
                     data-easing="Power3.easeInOut"
                     data-endspeed="300"
                     style="z-index: 2">
-                    <h2 class="slide-title">Join AVA now & get our free courses!</h2>
+                    <h2 class="slide-title">Register now. sign up for FREE course!</h2>
                 </div>
-                <!-- LAYER NR. 2 -->
                 <div class="tp-caption black randomrotate skewtoleft tp-resizeme start"
                     data-x="center"
                     data-hoffset="0"
@@ -65,9 +73,11 @@
                     data-elementdelay="0.1"
                     data-endelementdelay="0.1"
                     data-endspeed="500" style="z-index: 99; white-space: pre-line;">
-                    <p class="slide-description">Lorem Ipsum is simply dummy of the printing and typesetting 's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <p class="slide-description">Give AudioVerse Advance a try with the Evangelism 101 course by Emmanuel Institute
+                        <a href="${static.url('/courses/course-v1:EmmanuelInstitute+EM.EV101+2016-T1/about')}"><button class="slide-more">View Course</button></a>
+                    </p>
                 </div>
-            </li><!-- end 2nd slide -->
+            </li>
         </ul><!-- end ul elements -->
     </div><!-- end tp-banner -->
 </div><!-- End Home Slider Container -->

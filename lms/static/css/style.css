@@ -75,6 +75,7 @@ body {
     top: 50%;
     width: 80px;
 }
+
 .media .hero .play-intro .play-button {
 	font-size: 28px;
 	color: #fff;
@@ -82,6 +83,11 @@ body {
     margin-left: 30px;
     position: absolute;
 }
+
+#play-box:hover #play-button {
+	color: #2c79a4;
+}
+
 .media {
     background: transparent;
     box-sizing: border-box;
@@ -1068,7 +1074,8 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	display:block;
 	text-align:left;
 	padding: 3px 12px 0px 12px;
-	color: grey
+	color: grey;
+	text-transform: uppercase;
 }
 .latest-courses-section .course-info .course-title a:hover,
 .dark .latest-courses-section .course-info .course-title a:hover {
@@ -1251,7 +1258,8 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	display:block;
 	text-align:left;
 	padding: 3px 12px 0px 12px;
-	color: grey
+	color: grey;
+	text-transform: uppercase;
 }
 .dashboard-courses-section .course-info .course-title a {
 	color: #2b2e3b

@@ -150,7 +150,7 @@ from openedx.core.lib.courses import course_image_url
                             <a href="#intro-video-modal" class="media">
                               <div class="hero">
                                 <img src="${course_image_urls['large']}" alt="" class="img-responsive" />
-                                <div class="play-intro"><i class="fa fa-play play-button"></i></div>
+                                <div id="play-box" class="play-intro"><i id="play-button" class="fa fa-play play-button"></i></div>
                               </div>
                             </a>
                         %else:
@@ -175,10 +175,10 @@ from openedx.core.lib.courses import course_image_url
                             <div class="course-details">
                                 <div class="label">Course ID</div>
                                 <div class="value">${course.display_number_with_default | h}</div>
-                                <div class="label">Availability</div>
-                                <div class="value">${course.start_datetime_text()}</div>
+                                <!-- <div class="label">Availability</div>
+                                <div class="value">${course.start_datetime_text()}</div> -->
                                 % if get_course_about_section(request, course, "effort"):
-                                <div class="label">Effort</div>
+                                <div class="label">Length</div>
                                 <div class="value">${get_course_about_section(request, course, "effort")} HRS</div>
                                 % endif
                                 ##%if course_price and (can_add_course_to_cart or is_cosmetic_price_enabled):

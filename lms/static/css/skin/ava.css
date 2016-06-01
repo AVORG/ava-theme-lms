@@ -186,7 +186,7 @@ header .main-navigation li.parent-item ul.submenu ul {
 	margin-top: 20px;
 }
 .login-page a {
-	color: #2c79a4;
+	color: #2C79A4;
 }
 .login-page .message-box {
 	padding: 20px 20px 20px 20px;
@@ -774,4 +774,92 @@ hr.style-one {
 .comment-form .valid {
 	background-color: #FFFFFF;
 
+}
+/** Slide Show **/
+@media only screen and (min-width: 768px) {
+	.vertical-middle {
+		height: auto !important;
+		left: 0;
+	}
+	.slogan_img {
+		width: 61px !important;
+		height: 65px !important;
+	}
+	.slogan_img_instruct {
+		width: 45px !important;
+		height: 65px !important;
+		position: relative;
+		right: -10px;
+	}
+	.slogan_text {
+	    font-size: 30px !important;
+	    color: #FFFFFF !important;
+		left: -20px !important;
+		position: relative !important;
+		font-weight: 600 !important;
+	}
+	.slide-description {
+		font-size: 18px !important;
+		margin-top: 50px !important;
+		position: relative !important;
+		left: -20px;
+		font-weight: 400 !important;
+	}
+}
+@media only screen and (max-width: 768px) {
+
+	.vertical-middle {
+		display: none;
+	    height: auto !important;
+	    left: 0 !important;
+	}
+	.slogan_img {
+	    width: 61px !important;
+	    height: 65px !important;
+	}
+	.slogan_img_instruct {
+	    width: 45px !important;
+	    height: 65px !important;
+		position: relative;
+		right: -10px;
+	}
+	.slogan_text {
+	    font-size: 30px !important;
+	    color: #FFFFFF !important;
+		left: -20px !important;
+		position: relative !important;
+		font-weight: 600 !important;
+	}
+	.slide-description {
+		font-size: 18px !important;
+		position: relative !important;
+		font-weight: 400 !important;
+		display: inline !important;
+		line-height: 1.2 !important;
+		text-align: center !important;
+		display:inline-block !important;
+	}
+}
+.ls1 {
+    letter-spacing: 1px !important;
+}
+.t300 {
+    font-weight: 300 !important;
+}
+
+.slide-more {
+	margin-top: 20px;
+	padding: 8px;
+    color: #FFFFFF;
+	border: solid 2px #2C79A4;
+	border-radius: 2px;
+	font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 13px;
+	-webkit-appearance: button;
+	background-color: #2C79A4;
+	appearance: none;
+  	box-shadow: none;
+	text-transform: uppercase;
+	cursor:pointer;
 }
