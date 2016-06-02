@@ -444,6 +444,7 @@ hr.style-one {
 	margin-left: 40px;
 	font-size: 14px;
 	line-height: 22px;
+	list-style-type: circle;
 }
 /* Loading Animation */
 .loading-animation {
