@@ -439,6 +439,12 @@ hr.style-one {
     overflow: hidden;
     padding: 1px;
 }
+
+.objectives ul {
+	margin-left: 40px;
+	font-size: 14px;
+	line-height: 22px;
+}
 /* Loading Animation */
 .loading-animation {
   margin: 100px auto;
