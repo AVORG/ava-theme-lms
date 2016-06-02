@@ -390,11 +390,12 @@ header .main-navigation > ul > li > a {
 header .main-navigation > ul > li > a:focus {
 	outline: 0;
 }
-header .main-navigation > ul > li.login > a span {
-	background: #4b4f5c;
+header .main-navigation > ul > li.donate > a span {
+	background: #2d79a2;
 	padding: 5px 10px;
 	border-radius: 3px;
 	box-shadow: none;
+	color: #FFFFFF;
 }
 header .main-navigation ul li.current_page_item a,
 header .main-navigation ul li a:hover,
