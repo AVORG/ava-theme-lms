@@ -317,7 +317,7 @@ header.static-header {
 /* Top Bar */
 .top-bar {
 	height: 40px;
-	background: #f5f5f5;
+	background: #F0F0F0;
 	border-bottom: 1px solid #e6e6e7;
 	overflow: hidden;
 }
@@ -733,17 +733,6 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	position: relative;
 	text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.5);
 }
-.tp-banner ul li .slide-title:after, .fullscreen ul li .slide-title:after {
-	content: "";
-	background: #4b4f5c;
-	display: block;
-	width: 30px;
-	height: 3px;
-	margin-left: -15px;
-	position: absolute;
-	left: 50%;
-	bottom: -25px;
-}
 .tp-banner ul li .slide-description, .fullscreen ul li .slide-description {
 	position: relative;
 	font-size: 15px;
@@ -826,7 +815,7 @@ header.alt .mobile-navigation .mobile-btn span:after {
 }
 /* 05 - Sections */
 .features-section {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	text-align: center;
 }
 .features-section.white-bg {
@@ -863,7 +852,7 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	border-radius: 3px 3px 0 0;
 }
 .instructors-section .instructor-info {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	border-radius: 0 0 3px 3px;
 	padding: 27px 0 30px;
 }
@@ -992,7 +981,7 @@ header.alt .mobile-navigation .mobile-btn span:after {
 }
 .instructors-page {
 	padding: 100px 0 70px;
-	background: #f5f5f5;
+	background: #F0F0F0;
 }
 .instructors-page .instructor {
 	margin-bottom: 30px;
@@ -1002,19 +991,18 @@ header.alt .mobile-navigation .mobile-btn span:after {
 }
 /* Latest Courses Section */
 .latest-courses-section {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	text-align: center;
 }
 .latest-courses-section .latest-courses-content {
 	margin-top: 30px;
 }
 .latest-courses-section .course {
-	border: 1px #ededed solid;
+	border: 1px #E6E6E6 solid;
 	position: relative;
 	background: #fff;
 	margin: 4px 0 20px 0;
 	border-radius: 4px;
-	box-shadow: 0px 2px 1px 0px rgba(46, 122, 163, 0.13), inset 0px -2px 0px 0px rgba(46, 122, 163, 0.12);
 	min-height: 350px;
 }
 
@@ -1184,7 +1172,7 @@ header.alt .mobile-navigation .mobile-btn span:after {
 }
 /* Dashboard Course */
 .dashboard-courses-section {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	text-align: center;
 }
 .dashboard-courses-section .latest-courses-content {
@@ -1473,7 +1461,7 @@ header.alt .mobile-navigation .mobile-btn span:after {
 }
 /* Misc Section */
 .misc-section {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding-top: 95px;
 }
 .blog-posts {
@@ -1841,7 +1829,7 @@ h6.head-title {
 .testimonials-section .testimonials-content .name {
 	font-size: 14px;
 	font-weight: bold;
-	color: #f5f5f5;
+	color: #F0F0F0;
 	margin-bottom: 2px;
 }
 .testimonials-section .testimonials-content .position {
@@ -2042,7 +2030,7 @@ h6.head-title {
 /* 14 - Blog */
 .post {
 	padding-top: 50px;
-	background: #f5f5f5;
+	background: #F0F0F0;
 }
 .post #single-slider {
 	margin-bottom: 30px;
@@ -2161,7 +2149,7 @@ h6.head-title {
 /* Listview */
 .blog {
 	padding: 70px 0 100px;
-	background: #f5f5f5;
+	background: #F0F0F0;
 }
 .blog .blogpost {
 	padding: 20px 20px 22px;
@@ -2522,7 +2510,7 @@ h6.head-title {
 	margin-bottom: 30px;
 }
 .sidebar .sidebar-twitter-widget .status {
-	color: #f5f5f5;
+	color: #F0F0F0;
 }
 .sidebar .sidebar-twitter-widget .date {
 	color: #202028;
@@ -2632,7 +2620,7 @@ h6.head-title {
 	color: #383c4b;
 }
 .comments-list li .text {
-	color: #f5f5f5;
+	color: #F0F0F0;
 }
 .comments-list ul.children {
 	margin-left: 100px;
@@ -2937,7 +2925,7 @@ h6.head-title {
 	vertical-align: top;
 }
 .login-page {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding: 50px 0;
 }
 .login-page .login-form {
@@ -3058,7 +3046,7 @@ h6.head-title {
 }
 /* 20 - Contact */
 .contact {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding-bottom: 100px;
 }
 /* map */
@@ -3125,7 +3113,7 @@ h6.head-title {
 }
 /* Typography page */
 .typography, .shortcodes {
-	background: #f5f5f5;
+	background: #F0F0F0;
 }
 .space {
 	height: 30px;
@@ -3265,7 +3253,7 @@ blockquote.blockquote-4 .story {
 .colored ul li .vk {background: #4778ac;}
 /* 22 - Pricing tables */
 .pricing-tables {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding: 100px 0;
 }
 .pricing-tables .table-row {
@@ -3424,7 +3412,7 @@ blockquote.blockquote-4 .story {
 }
 /* 21 - Coming soon */
 .coming-soon {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding: 220px 0;
 }
 .countdown {
@@ -3452,7 +3440,7 @@ blockquote.blockquote-4 .story {
 }
 /* 22 - Page 404 */
 .error-page {
-	background: #f5f5f5;
+	background: #F0F0F0;
 	padding: 108px 0 115px;
 }
 .error-page .not-found {

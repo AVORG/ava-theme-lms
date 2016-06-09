@@ -24,8 +24,7 @@ h1.h1-title, h2.h2-title, h3.h3-title, h4.h4-title, h5.h5-title, h6.h6-title, .r
 header .main-navigation > ul > li.login > a span, blockquote.blockquote-4,
 header .main-navigation li.courses-menu li .single-item .item-icon,
 header.alt .main-navigation > ul > li:after, header.alt .main-navigation > ul > li.courses-menu > a:after,
-.top-bar .top-social-icons ul li a:hover, .tp-banner ul li .slide-title:after,
-.fullscreen ul li .slide-title:after, .tp-bullets.simplebullets .bullet.selected,
+.top-bar .top-social-icons ul li a:hover, .tp-bullets.simplebullets .bullet.selected,
 .tp-bullets.simplebullets.round .bullet.selected, .course-search #search-btn:hover,
 .dropdown .carat, .btn.orange-btn, .flex-direction-nav a, .course-search.alt .container,
 .comment-form .input .submit-input:hover, .contact-form .input .submit-input:hover,
@@ -441,7 +440,7 @@ hr.style-one {
 }
 
 .objectives ul {
-	margin-left: 40px;
+	margin-left: 20px;
 	font-size: 14px;
 	line-height: 22px;
 	list-style-type: circle;
@@ -838,7 +837,7 @@ hr.style-one {
 		font-weight: 600 !important;
 	}
 	.slide-description {
-		font-size: 18px !important;
+		font-size: 13px !important;
 		position: relative !important;
 		font-weight: 400 !important;
 		display: inline !important;

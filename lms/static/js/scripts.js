@@ -10,7 +10,7 @@
 
         /***************** Isotope Filter ******************/
 
-        
+
         var $optionSets = $('.filter'), $optionLinks = $optionSets.find('a');
         $optionLinks.on("click", function() {
             var $this = $(this);
@@ -110,7 +110,7 @@
 
     function initFlexModal() {
         $('.modal-slider').flexslider({
-            animation: "slide",
+            animation: "fade",
             controlNav: false,
             prevText: "",
             nextText: "",
