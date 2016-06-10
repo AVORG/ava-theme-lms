@@ -30,7 +30,15 @@ from openedx.core.lib.courses import course_image_url
             background: #474747;
             color: #3c3c3c;
         }
-
+        .discount_link {
+            padding-top: 15px;
+            font-size: 12px;
+            text-align: center;
+            color: #2E96C5
+        }
+        .discount_link a {
+            color: #1f8fc1;
+        }
     </style>
     <script>
     $(function() {
@@ -233,6 +241,7 @@ from openedx.core.lib.courses import course_image_url
                                     </a>
                                     <div id="register_error"></div>
                                 %endif
+                                    <div class="discount_link"><a href="/discounts">Enrolling a a group? Check out group discounts!</a></div>
                             </div><!-- End Course Details -->
                         </div><!-- End Sidebar Entry -->
                     </div><!-- End col-md-4-->
