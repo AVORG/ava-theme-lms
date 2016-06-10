@@ -1064,7 +1064,6 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	text-align:left;
 	padding: 3px 12px 0px 12px;
 	color: grey;
-	text-transform: uppercase;
 }
 .latest-courses-section .course-info .course-title a:hover,
 .dark .latest-courses-section .course-info .course-title a:hover {
@@ -1248,7 +1247,6 @@ header.alt .mobile-navigation .mobile-btn span:after {
 	text-align:left;
 	padding: 3px 12px 0px 12px;
 	color: grey;
-	text-transform: uppercase;
 }
 .dashboard-courses-section .course-info .course-title a {
 	color: #2b2e3b
@@ -2311,7 +2309,6 @@ h6.head-title {
 .post .entry-sidebar .course-details .value {
 	font-weight: 700;
 	font-size: 16px;
-	text-transform: uppercase;
 	color: #2e3d49;
 	margin-bottom: .8em;
 }
