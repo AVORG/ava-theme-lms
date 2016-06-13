@@ -1,24 +1,28 @@
 <%! from django.utils.translation import ugettext as _ %>
-<%inherit file="../main.html" />
-
+<%inherit file="../main-ava.html" />
+<%block name="page_header">
+    <%include file="../page_header.html" args="page_properties={
+      'title': 'Invalid Certificate Configuration',
+      'description': '',
+      'current_page': ''
+    }" />
+</%block>
 <%block name="pagetitle">${_("Invalid Certificate Configuration.")}</%block>
-
-<section class="outside-app">
-    <h1>
-        ${_(u"There is a problem with this certificate.")}
-    </h1>
-
-    <div>
+<section class="full-section">
+    <div class="container center">
+        <h2>
+            ${_(u"There is a problem with this certificate.")}
+        </h2>
         <p>
             ${_("To resolve the problem, your partner manager should verify that the following information is correct.")}
         </p>
+        <p>
         <ul>
             <li>${_("The institution&#39;s logo.")}</li>
             <li>${_("The institution that is linked to the course.")}</li>
             <li>${_("The course information in the Course Administration tool.")}</li>
         </ul>
-        <br/>
+        </p>
         <p>${_("If all of the information is correct and the problem persists, contact technical support.")}</p>
     </div>
-
 </section>
