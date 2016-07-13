@@ -3853,11 +3853,11 @@ footer #bottom .footer-social-icons li a {
 footer #bottom .footer-social-icons li a:hover {
 	background: #4b4f5c;
 }
-footer #bottom .footer-social-icons li a i {
+footer #bottom .footer-social-icons li a span {
 	color: #eef1f2;
 	font-size: 14px;
 }
-footer #bottom .footer-social-icons li a:hover i {
+footer #bottom .footer-social-icons li a:hover span {
 	color: #383c4b;
 }
 /* 25 - Animation & Transition */
@@ -3893,7 +3893,7 @@ header.alt .main-navigation > ul > li.courses-menu > a:after {
 	-o-transition: all .4s ease;
 	transition: all .4s ease;
 }
-.categories-section .cat-box, footer #bottom .footer-social-icons li a i,
+.categories-section .cat-box, footer #bottom .footer-social-icons li a span,
 .instructors-section .instructor-info .social-icons li a i,
 .top-bar .top-social-icons ul li a i, .post .entry .icons ul li a i {
 	-webkit-transition: transform .25s ease;
@@ -3903,7 +3903,7 @@ header.alt .main-navigation > ul > li.courses-menu > a:after {
 	transition: transform .25s ease;
 }
 .categories-section .cat-box:hover .cat-image .cat-icon i,
-footer #bottom .footer-social-icons li a:hover i,
+footer #bottom .footer-social-icons li a:hover span,
 .instructors-section .instructor-info .social-icons li a:hover i,
 .top-bar .top-social-icons ul li a:hover i, .post .entry .icons ul li a:hover i,
 .follow-icons ul li a:hover i, .share-icons ul li a:hover i,
