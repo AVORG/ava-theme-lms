@@ -2,6 +2,6 @@
   from courseware.courses import get_course_about_section
 %>
 <%namespace name='static' file='static_content.html'/>
-<div data-remodal-id="intro-video-modal" role="dialog">
+<div class="video-remodal" data-remodal-id="intro-video-modal" role="dialog">
     ${get_course_about_section(request, course, "video")}
 </div>
