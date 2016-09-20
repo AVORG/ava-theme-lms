@@ -43,7 +43,7 @@ except:
 <header id="header" class="${header_class}">
     <div class="container">
         <div class="logo-container fl clearfix">
-            <a href="/" class="ib">
+            <a href="https://www.avadvance.org/" class="ib">
                 <img src="${static.url('images/logo-main.png')}" class="fl" alt="Logo">
                 <span class="site-name"><img src="${static.url('images/'+logo)}"></span>
             </a>
@@ -53,36 +53,36 @@ except:
             <ul class="clearfix">
                 % if not user.is_authenticated():
                 <li class="parent-item ${is_active('/')}">
-                    <a href="/" class="ln-tr">Home</a>
+                    <a href="https://www.avadvance.org/" class="ln-tr">Home</a>
                 </li>
                 % endif
                 <li class="parent-item ${is_active('/about')}">
-                    <a href="/about" class="ln-tr">About</a>
+                    <a href="https://www.avadvance.org/about" class="ln-tr">About</a>
                 </li>
                 <li class="parent-item ${is_active('/courses')}">
-                    <a href="/courses" class="ln-tr ">Browse Courses</a>
+                    <a href="https://courses.avadvance.org/courses" class="ln-tr ">Browse Courses</a>
                 </li>
                 <li class="parent-item ${is_active('/dashboard') + is_active('/login')}">
                     % if user.is_authenticated():
-                    <a href="/dashboard">Dashboard</a>
+                    <a href="https://courses.avadvance.org/dashboard">Dashboard</a>
                     % else:
-                    <a href="/login">Sign In</a>
+                    <a href="https://courses.avadvance.org/login">Sign In</a>
                     % endif
                 </li>
                 % if user.is_authenticated():
                 <li class="parent-item ${is_active('/account/settings')}">
-                    <a href="/account/settings">Account</a>
+                    <a href="https://courses.avadvance.org/account/settings">Account</a>
                 </li>
                 <li class="parent-item ${is_active('/u/'+user.username)}">
-                    <a href="/u/${user.username}#about_me">Profile</a>
+                    <a href="https://courses.avadvance.org/u/${user.username}#about_me">Profile</a>
                 </li>
                 <li class="parent-item">
-                    <a href="/logout">Sign Out</a>
+                    <a href="https://courses.avadvance.org/logout">Sign Out</a>
                 </li>
                 % endif
                 % if not user.is_authenticated():
                 <li class="parent-item ${is_active('/register')}">
-                    <a href="/register${login_query()}" class="ln-tr">Register</a>
+                    <a href="https://courses.avadvance.org/register${login_query()}" class="ln-tr">Register</a>
                 </li>
                 %endif
                 <li class="parent-item donate">

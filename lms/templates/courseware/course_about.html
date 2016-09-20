@@ -46,6 +46,10 @@ from openedx.core.lib.courses import course_image_url
             modifier: 'video-box'
         });
     });
+    $(document).on('closed', '.video-remodal', function (e) {
+        console.log('closed');
+        $('#modal-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+    });
     </script>
 </%block>
 
