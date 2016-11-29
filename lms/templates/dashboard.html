@@ -50,18 +50,22 @@ from openedx.core.djangolib.markup import Text, HTML
           changeEmailSettings: '/change_email_settings'
       };
 
-      $(document).on('opening', '#unenroll-remodal', function (event) {
-          $('#track-info').html(
-              //$('.action-unenroll').attr('data-track-info').replace("%(course_name)s", $('.action-unenroll').attr('data-course-name')).replace("%(course_number)s", $('.action-unenroll').attr('data-course-number'))
-              $(event.target).data("track-info").replace("%(course_name)s", $(event.target).data("course-name")).replace("%(course_number)s", $(event.target).data('course-number'))
-          );
-          if ( $('.action-unenroll').attr('data-refund-info') !== undefined) {
-              //$('#refund-info').html($('.action-unenroll').attr('data-refund-info'));
-              $('#refund-info').html($(event.target).data('refund-info'));
-          }
-          //$('#unenroll_course_id').val($('.action-unenroll').attr('data-course-id'));
-          $('#unenroll_course_id').val($(event.target).data('course-id'));
+      var course_alert = '';
+      var course_refund_info = '';
+      var course_id = '';
 
+      $("[id=unenroll]").click(function(event) {
+          course_alert = $(this).attr('data-track-info').replace("%(course_name)s", $(this).attr('data-course-name')).replace("%(course_number)s", $(this).attr('data-course-number'));
+          course_refund_info = $(this).attr('data-refund-info');
+          course_id = $(this).attr('data-course-id');
+      });
+
+      $(document).on('opening', '#unenroll-remodal', function (event) {
+          $('#track-info').html(course_alert);
+          if ( course_refund_info !== undefined) {
+              $('#refund-info').html(course_refund_info);
+          }
+          $('#unenroll_course_id').val(course_id);
       });
 
       $('#unenroll_form').on('ajax:complete', function(event, xhr) {
