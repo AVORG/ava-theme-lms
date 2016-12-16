@@ -59,37 +59,12 @@ from openedx.core.lib.courses import course_image_url
   % endif
   <script type="text/javascript">
   (function() {
+    /*
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
     });
-
-    % if can_add_course_to_cart:
-      add_course_complete_handler = function(jqXHR, textStatus) {
-        if (jqXHR.status == 200) {
-          location.href = "${cart_link}";
-        }
-        if (jqXHR.status == 400) {
-          $("#register_error")
-            .html(jqXHR.responseText ? jqXHR.responseText : "${_("An error occurred. Please try again later.")}")
-            .css("display", "block");
-        }
-        else if (jqXHR.status == 403) {
-            location.href = "${reg_then_add_to_cart_link}";
-        }
-      };
-
-      $("#add_to_cart_post").click(function(event){
-        $.ajax({
-          url: "${reverse('add_course_to_cart', args=[course.id.to_deprecated_string()])}",
-          type: "POST",
-          /* Rant: HAD TO USE COMPLETE B/C PROMISE.DONE FOR SOME REASON DOES NOT WORK ON THIS PAGE. */
-          complete: add_course_complete_handler
-        })
-        event.preventDefault();
-      });
-    % endif
-
+    */
     ## making the conditional around this entire JS block for sanity
     %if settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
       <%
@@ -202,8 +177,6 @@ from openedx.core.lib.courses import course_image_url
                                 <div class="value">${course.display_org_with_default | h}</div>
                                 %if user.is_authenticated() and registered:
                                         <a href="${course_target}" class="btn grad-btn orange-btn join-btn">${_("You are enrolled")}</a>
-                                %elif in_cart:
-                                  ${_('<a href="{cart_link}" class="btn grad-btn orange-btn join-btn">Course in cart</a>.').format(cart_link=cart_link)}
                                 % elif is_course_full:
                                   <a href="#" class="btn grad-btn orange-btn join-btn">${_("Course is full")}</a>
                                 % elif invitation_only and not can_enroll:
@@ -213,34 +186,21 @@ from openedx.core.lib.courses import course_image_url
                                 ## so that they can register and become a real user that can enroll.
                                 % elif not is_shib_course and not can_enroll:
                                   <a href="#" class="btn grad-btn orange-btn join-btn">${_("Enrollment is Closed")}</a>
-                                %elif can_add_course_to_cart:
-                                    <%
-                                    if user.is_authenticated():
-                                      reg_href = "#"
-                                      reg_element_id = "add_to_cart_post"
-                                    else:
-                                      reg_href = reg_then_add_to_cart_link
-                                      reg_element_id = "reg_then_add_to_cart"
-                                    %>
-                                    <% if ecommerce_checkout:
-                                        reg_href = ecommerce_checkout_link
-                                        reg_element_id = ""
-                                    %>
-                                  <a href="${reg_href}" class="btn grad-btn orange-btn join-btn" id="${reg_element_id}">Add to Cart</a>
-                                  <div id="register_error"></div>
                                 %else:
                                     <%
                                       if ecommerce_checkout:
                                         reg_href = ecommerce_checkout_link
+                                        button_message = "Enroll in Course"
                                       else:
-                                        reg_href="#"
+                                        reg_href="/logout"
+                                        button_message = "Activate Your Account"
                                       if professional_mode:
                                         href_class = "add-to-cart"
                                       else:
                                         href_class = "register"
                                     %>
                                     <a href="${reg_href}" class="${href_class} btn grad-btn orange-btn join-btn">
-                                      Enroll in Course
+                                      ${button_message}
                                     </a>
                                     <div id="register_error"></div>
                                 %endif
