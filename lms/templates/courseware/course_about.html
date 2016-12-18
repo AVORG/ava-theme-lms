@@ -59,12 +59,12 @@ from openedx.core.lib.courses import course_image_url
   % endif
   <script type="text/javascript">
   (function() {
-    /*
+
     $(".register").click(function(event) {
       $("#class_enroll_form").submit();
       event.preventDefault();
     });
-    */
+
     ## making the conditional around this entire JS block for sanity
     %if settings.FEATURES.get('RESTRICT_ENROLL_BY_REG_METHOD') and course.enrollment_domain:
       <%
